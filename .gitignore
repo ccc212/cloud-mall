@@ -36,3 +36,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
+mall-ui/admin/node_modules/
