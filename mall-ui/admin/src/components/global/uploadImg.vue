@@ -4,7 +4,8 @@
             <div class="uploadbox" v-if="imgMode=='1'">
                 <el-upload
                 class="avatar-uploader"
-                action="http://source-api.secby.cn/oss/upload"
+                :action="fileUploadUrl"
+
                 :show-file-list="false"
                 :before-upload="uploadProImg"
                 :on-success="onSuccess"
@@ -37,7 +38,8 @@
                             </span>
                         </li>
                         <div v-if="dataStatus">
-                            <el-upload class="upload_btn" v-show="uploadShow" style="display:inline;float:left;" ref="upload"  action="" :show-file-list="false" 
+                            <el-upload class="upload_btn" v-show="uploadShow" style="display:inline;float:left;" ref="upload"  :action="fileUploadUrl" :show-file-list="false" 
+
                                 name="file" :limit="Number(residueCount+1)" :on-exceed="onexceedFn" :multiple="true" 
                                 :before-upload="uploadProImg" list-type="picture-card" accept=".png,.jpg,.jpeg,.gif" :http-request="function(){}">
                                 <i class="el-icon-plus"></i>
@@ -62,6 +64,8 @@
 </template>
 <script>
 import axios from 'axios'
+import { FILE_UPLOAD_URL } from '@/config/upload'
+
 export default {
     props:{
         width:{
@@ -114,7 +118,7 @@ export default {
             residueCount:0,//剩余可上传
             uploadShow:true,//上传图片按钮
             imageCount:0,//最大上传图片数
-            
+            fileUploadUrl: FILE_UPLOAD_URL,
          }
      },
       created: function() {

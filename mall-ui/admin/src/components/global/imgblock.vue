@@ -58,6 +58,7 @@
 import draggable from "vuedraggable";
 import Vue from "vue";
 import { showLoading, hideLoading } from "@/api/loading";
+import { FILE_UPLOAD_URL } from "@/config/upload";
 export default {
   components: {
     draggable
@@ -82,11 +83,12 @@ export default {
       showfalse: false,
       submitImg: "",
       imgData: {},
-      fileApi: "http://source-api.secby.cn/oss/upload",
+      fileApi: FILE_UPLOAD_URL,
       networkShow: false, //网络图片弹窗
       networkForm: {
         url: ""
       },
+
       rules: {
         //验证规则
         url: [{ required: true, message: "请填写url" }]

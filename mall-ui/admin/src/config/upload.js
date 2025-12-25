@@ -1,0 +1,1 @@
+export const FILE_UPLOAD_URL = 'http://localhost:8081/file/upload';

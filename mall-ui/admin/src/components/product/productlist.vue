@@ -445,6 +445,13 @@ export default {
               (result.data.data.records &&
                 Array.isArray(result.data.data.records) &&
                 result.data.data.records.map(item => {
+                  const images = (item.images || "")
+                    .split(',')
+                    .map(img => img.trim())
+                    .filter(Boolean);
+                  if (!item.image && images.length) {
+                    item.image = images[0];
+                  }
                   item.isMarketable == "1"
                     ? (item.isMarketable = true)
                     : (item.isMarketable = false);
