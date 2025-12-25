@@ -2,6 +2,9 @@ package cn.ccc212.mall.mapper;
 
 import cn.ccc212.mall.goods.api.Brand;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface BrandMapper extends BaseMapper<Brand> {
 
+    @Select("select brand_id from category_brand cb where cb.category_id = #{id}")
+    List<Integer> queryByCategoryId(Integer id);
 }

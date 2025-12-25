@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ccc212.mall.mapper.SkuMapper">
+
+    <insert id="saveBatch">
+        insert into sku (id, name, price, num, image, images, create_time,
+        update_time, spu_id, category_id, category_name, brand_id,
+        brand_name, sku_attribute, status) values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.id}, #{item.name}, #{item.price}, #{item.num}, #{item.image}, #{item.images}, #{item.createTime},
+            #{item.updateTime}, #{item.spuId}, #{item.categoryId}, #{item.categoryName}, #{item.brandId},
+            #{item.brandName}, #{item.skuAttribute}, #{item.status}
+            )
+        </foreach>
+    </insert>
+</mapper>
