@@ -1,4 +1,4 @@
-package cn.ccc212.mall.service;
+package cn.ccc212.service;
 
 import org.springframework.web.multipart.MultipartFile;
 

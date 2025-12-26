@@ -1,7 +1,7 @@
-package cn.ccc212.mall.controller;
+package cn.ccc212.controller;
 
-import cn.ccc212.mall.service.FileUpLoadService;
 import cn.ccc212.mall.util.RespResult;
+import cn.ccc212.service.FileUpLoadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
-package cn.ccc212.mall.config;
+package cn.ccc212.config;
 
 
-import cn.ccc212.mall.config.properties.MinioProperties;
+import cn.ccc212.config.properties.MinioProperties;
 import io.minio.MinioClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

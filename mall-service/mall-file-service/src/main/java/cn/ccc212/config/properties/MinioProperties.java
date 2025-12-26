@@ -1,4 +1,4 @@
-package cn.ccc212.mall.config.properties;
+package cn.ccc212.config.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

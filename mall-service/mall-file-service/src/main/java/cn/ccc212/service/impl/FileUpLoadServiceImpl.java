@@ -1,7 +1,7 @@
-package cn.ccc212.mall.service.impl;
+package cn.ccc212.service.impl;
 
-import cn.ccc212.mall.config.properties.MinioProperties;
-import cn.ccc212.mall.service.FileUpLoadService;
+import cn.ccc212.config.properties.MinioProperties;
+import cn.ccc212.service.FileUpLoadService;
 import io.minio.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
