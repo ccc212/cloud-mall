@@ -1,4 +1,4 @@
-package cn.ccc212.mall.goods.api;
+package cn.ccc212.mall.goods.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -19,30 +19,21 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("ad_items")
-public class AdItems implements Serializable {
+@TableName("category_brand")
+public class CategoryBrand implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
-
-    private String name;
+    /**
+     * 分类ID
+     */
+    @TableId(value = "category_id", type = IdType.AUTO)
+    private Integer categoryId;
 
     /**
-     * 分类，1首页推广,2列表页推广
+     * 品牌ID
      */
-    private Integer type;
-
-    /**
-     * 展示的产品
-     */
-    private String skuId;
-
-    /**
-     * 排序
-     */
-    private Integer sort;
+    private Integer brandId;
 
 
 }

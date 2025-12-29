@@ -1,6 +1,6 @@
 package cn.ccc212.mall.service;
 
-import cn.ccc212.mall.goods.api.Category;
+import cn.ccc212.mall.goods.model.Category;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

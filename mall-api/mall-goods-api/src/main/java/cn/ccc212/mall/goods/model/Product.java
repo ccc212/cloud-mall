@@ -1,4 +1,4 @@
-package cn.ccc212.mall.goods.api;
+package cn.ccc212.mall.goods.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

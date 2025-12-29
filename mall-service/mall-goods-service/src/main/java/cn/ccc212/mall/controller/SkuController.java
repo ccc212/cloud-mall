@@ -1,15 +1,11 @@
 package cn.ccc212.mall.controller;
 
 
-import cn.ccc212.mall.goods.api.Sku;
+import cn.ccc212.mall.goods.model.Sku;
 import cn.ccc212.mall.service.ISkuService;
 import cn.ccc212.mall.util.RespResult;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +27,18 @@ public class SkuController {
     @GetMapping("/aditems/type")
     public RespResult<List<Sku>> typeitems(@RequestParam Integer type){
         return RespResult.ok(skuService.findSkuListByAdItemsType(type));
+    }
+
+    @DeleteMapping("/deleteAditems/type")
+    public RespResult<?> deleteTypeItems(@RequestParam Integer type){
+        skuService.deleteAditemsByType(type);
+        return RespResult.ok();
+    }
+
+    @PutMapping("/updateAitems/type")
+    public RespResult<List<Sku>> updateTypeItems(@RequestParam Integer type){
+        skuService.updateAditemsByType(type);
+        return RespResult.ok();
     }
 
 }

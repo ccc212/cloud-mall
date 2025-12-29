@@ -2,7 +2,7 @@ package cn.ccc212.mall.controller;
 
 
 import cn.ccc212.mall.dto.brand.BrandAddDTO;
-import cn.ccc212.mall.goods.api.Brand;
+import cn.ccc212.mall.goods.model.Brand;
 import cn.ccc212.mall.service.IBrandService;
 import cn.ccc212.mall.util.RespResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

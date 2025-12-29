@@ -1,6 +1,6 @@
 package cn.ccc212.mall.service.impl;
 
-import cn.ccc212.mall.goods.api.AdItems;
+import cn.ccc212.mall.goods.model.AdItems;
 import cn.ccc212.mall.mapper.AdItemsMapper;
 import cn.ccc212.mall.service.IAdItemsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

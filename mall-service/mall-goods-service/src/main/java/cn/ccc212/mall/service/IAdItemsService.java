@@ -1,6 +1,6 @@
 package cn.ccc212.mall.service;
 
-import cn.ccc212.mall.goods.api.AdItems;
+import cn.ccc212.mall.goods.model.AdItems;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

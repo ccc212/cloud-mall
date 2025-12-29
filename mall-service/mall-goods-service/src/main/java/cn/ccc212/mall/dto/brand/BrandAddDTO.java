@@ -1,6 +1,6 @@
 package cn.ccc212.mall.dto.brand;
 
-import cn.ccc212.mall.goods.api.Brand;
+import cn.ccc212.mall.goods.model.Brand;
 import lombok.Data;
 
 import java.util.List;

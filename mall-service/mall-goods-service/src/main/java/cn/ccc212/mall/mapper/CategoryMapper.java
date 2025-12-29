@@ -1,6 +1,6 @@
 package cn.ccc212.mall.mapper;
 
-import cn.ccc212.mall.goods.api.Category;
+import cn.ccc212.mall.goods.model.Category;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

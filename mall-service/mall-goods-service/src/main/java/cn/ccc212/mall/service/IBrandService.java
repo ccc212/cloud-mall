@@ -1,7 +1,7 @@
 package cn.ccc212.mall.service;
 
 import cn.ccc212.mall.dto.brand.BrandAddDTO;
-import cn.ccc212.mall.goods.api.Brand;
+import cn.ccc212.mall.goods.model.Brand;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 

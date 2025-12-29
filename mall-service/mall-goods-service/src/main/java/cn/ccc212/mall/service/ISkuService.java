@@ -1,6 +1,6 @@
 package cn.ccc212.mall.service;
 
-import cn.ccc212.mall.goods.api.Sku;
+import cn.ccc212.mall.goods.model.Sku;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -16,4 +16,8 @@ import java.util.List;
 public interface ISkuService extends IService<Sku> {
 
     List<Sku> findSkuListByAdItemsType(Integer type);
+
+    void deleteAditemsByType(Integer type);
+
+    List<Sku> updateAditemsByType(Integer type);
 }

@@ -1,12 +1,11 @@
 package cn.ccc212.mall.service.impl;
 
-import cn.ccc212.mall.goods.api.Category;
+import cn.ccc212.mall.goods.model.Category;
 import cn.ccc212.mall.mapper.CategoryMapper;
 import cn.ccc212.mall.service.ICategoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 /**

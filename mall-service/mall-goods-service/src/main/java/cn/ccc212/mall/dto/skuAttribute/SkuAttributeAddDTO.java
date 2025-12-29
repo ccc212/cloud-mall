@@ -1,6 +1,6 @@
 package cn.ccc212.mall.dto.skuAttribute;
 
-import cn.ccc212.mall.goods.api.SkuAttribute;
+import cn.ccc212.mall.goods.model.SkuAttribute;
 import lombok.Data;
 
 import java.util.List;

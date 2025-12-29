@@ -1,6 +1,6 @@
 package cn.ccc212.mall.mapper;
 
-import cn.ccc212.mall.goods.api.Sku;
+import cn.ccc212.mall.goods.model.Sku;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;

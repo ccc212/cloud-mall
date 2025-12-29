@@ -1,6 +1,6 @@
 package cn.ccc212.mall.mapper;
 
-import cn.ccc212.mall.goods.api.CategoryAttr;
+import cn.ccc212.mall.goods.model.CategoryAttr;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;

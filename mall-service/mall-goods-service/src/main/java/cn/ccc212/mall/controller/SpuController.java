@@ -1,8 +1,8 @@
 package cn.ccc212.mall.controller;
 
 
-import cn.ccc212.mall.goods.api.Product;
-import cn.ccc212.mall.goods.api.Spu;
+import cn.ccc212.mall.goods.model.Product;
+import cn.ccc212.mall.goods.model.Spu;
 import cn.ccc212.mall.service.ISpuService;
 import cn.ccc212.mall.util.RespResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

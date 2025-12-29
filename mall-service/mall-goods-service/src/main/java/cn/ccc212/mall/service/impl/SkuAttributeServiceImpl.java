@@ -2,8 +2,8 @@ package cn.ccc212.mall.service.impl;
 
 import cn.ccc212.mall.dto.skuAttribute.SkuAttributeAddDTO;
 import cn.ccc212.mall.dto.skuAttribute.SkuAttributePageDTO;
-import cn.ccc212.mall.goods.api.CategoryAttr;
-import cn.ccc212.mall.goods.api.SkuAttribute;
+import cn.ccc212.mall.goods.model.CategoryAttr;
+import cn.ccc212.mall.goods.model.SkuAttribute;
 import cn.ccc212.mall.mapper.CategoryAttrMapper;
 import cn.ccc212.mall.mapper.SkuAttributeMapper;
 import cn.ccc212.mall.service.ISkuAttributeService;

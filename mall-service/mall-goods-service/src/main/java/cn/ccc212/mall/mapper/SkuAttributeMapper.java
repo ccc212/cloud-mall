@@ -1,6 +1,6 @@
 package cn.ccc212.mall.mapper;
 
-import cn.ccc212.mall.goods.api.SkuAttribute;
+import cn.ccc212.mall.goods.model.SkuAttribute;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
 

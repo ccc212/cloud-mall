@@ -1,7 +1,7 @@
 package cn.ccc212.mall.controller;
 
 
-import cn.ccc212.mall.goods.api.Category;
+import cn.ccc212.mall.goods.model.Category;
 import cn.ccc212.mall.service.ICategoryService;
 import cn.ccc212.mall.util.RespResult;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
 package cn.ccc212.mall.service.impl;
 
 import cn.ccc212.mall.dto.brand.BrandAddDTO;
-import cn.ccc212.mall.goods.api.Brand;
-import cn.ccc212.mall.goods.api.CategoryBrand;
+import cn.ccc212.mall.goods.model.Brand;
+import cn.ccc212.mall.goods.model.CategoryBrand;
 import cn.ccc212.mall.mapper.BrandMapper;
 import cn.ccc212.mall.mapper.CategoryBrandMapper;
 import cn.ccc212.mall.service.IBrandService;

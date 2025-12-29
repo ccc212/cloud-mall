@@ -1,4 +1,4 @@
-package cn.ccc212.mall.goods.api;
+package cn.ccc212.mall.goods.model;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

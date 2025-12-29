@@ -2,7 +2,7 @@ package cn.ccc212.mall.service;
 
 import cn.ccc212.mall.dto.skuAttribute.SkuAttributeAddDTO;
 import cn.ccc212.mall.dto.skuAttribute.SkuAttributePageDTO;
-import cn.ccc212.mall.goods.api.SkuAttribute;
+import cn.ccc212.mall.goods.model.SkuAttribute;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
