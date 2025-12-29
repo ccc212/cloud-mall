@@ -1,12 +1,12 @@
 package cn.ccc212.mall.controller;
 
 
+import cn.ccc212.mall.dto.brand.BrandAddDTO;
 import cn.ccc212.mall.goods.api.Brand;
 import cn.ccc212.mall.service.IBrandService;
 import cn.ccc212.mall.util.RespResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,9 +26,9 @@ public class BrandController {
 
     private final IBrandService brandService;
 
-    @PostMapping("/addBrand")
-    public RespResult<?> addBrand(@RequestBody Brand brand){
-        this.brandService.save(brand);
+    @PostMapping
+    public RespResult<?> addBrand(@RequestBody BrandAddDTO brandAddDTO){
+        this.brandService.addBrand(brandAddDTO);
         return RespResult.ok();
     }
 
@@ -44,9 +44,9 @@ public class BrandController {
         return RespResult.ok();
     }
 
-    @DeleteMapping("/deleteBrand/{id}")
-    public RespResult<?> deleteBrand(@PathVariable String id){
-        this.brandService.removeById(id);
+    @DeleteMapping("/{brandId}")
+    public RespResult<?> deleteBrand(@PathVariable Integer brandId){
+        this.brandService.deleteBrand(brandId);
         return RespResult.ok();
     }
 
@@ -55,7 +55,7 @@ public class BrandController {
         return RespResult.ok(brandService.queryList(brand));
     }
 
-    @PostMapping("/queryPageList/{page}/{size}")
+    @PostMapping("/list/{page}/{size}")
     public RespResult<Page<Brand>> queryPageList(
             @PathVariable(value = "page")Long currentPage,
             @PathVariable(value = "size")Long size,

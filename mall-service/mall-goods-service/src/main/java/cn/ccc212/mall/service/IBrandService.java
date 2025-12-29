@@ -1,5 +1,6 @@
 package cn.ccc212.mall.service;
 
+import cn.ccc212.mall.dto.brand.BrandAddDTO;
 import cn.ccc212.mall.goods.api.Brand;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -21,4 +22,8 @@ public interface IBrandService extends IService<Brand> {
     Page<Brand> queryPageList(Long currentPage, Long size, Brand brand);
 
     List<Brand> queryByCategoryId(Integer id);
+
+    void addBrand(BrandAddDTO brandAddDTO);
+
+    void deleteBrand(Integer brandId);
 }

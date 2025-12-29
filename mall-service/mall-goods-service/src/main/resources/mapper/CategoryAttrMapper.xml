@@ -4,7 +4,7 @@
 
     <insert id="saveBatch">
         insert into category_attr (category_id, attr_id) values
-        <foreach item="categoryId" index="index" collection="categoryIds" separator=",">
+        <foreach item="categoryId" collection="categoryIds" separator=",">
             (#{categoryId}, #{attrId})
         </foreach>
     </insert>

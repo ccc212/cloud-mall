@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ccc212.mall.mapper.CategoryBrandMapper">
+
+    <insert id="saveBatch">
+        insert into category_brand (category_id, brand_id) values
+        <foreach item="categoryId" index="index" collection="categoryIds" separator=",">
+            (#{categoryId}, #{brandId})
+        </foreach>
+    </insert>
+</mapper>
