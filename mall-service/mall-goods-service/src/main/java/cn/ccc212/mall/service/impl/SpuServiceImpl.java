@@ -45,7 +45,8 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements ISpuS
         Spu spu = product.getSpu();
 
         if (StringUtils.isEmpty(spu.getId())) {
-            spu.setIsMarketable(CommonConstant.TRUE)
+            spu.setId(UUID.randomUUID().toString().replace("-", ""))
+                    .setIsMarketable(CommonConstant.TRUE)
                     .setIsDelete(CommonConstant.TRUE)
                     .setStatus(AuditStatusEnum.NOT_AUDIT.getCode());
             spuMapper.insert(spu);
@@ -68,7 +69,8 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements ISpuS
             for (Map.Entry<String, String> entry : attrMap.entrySet()) {
                 skuName += "   " + entry.getValue();
             }
-            sku.setName(skuName)
+            sku.setId(UUID.randomUUID().toString().replace("-", ""))
+                    .setName(skuName)
                     .setImages(spu.getImages())
                     .setStatus(GoodsStatusEnum.NORMAL.getCode())
                     .setCategoryId(spu.getCategoryThreeId())

@@ -1,7 +1,7 @@
 <template>
 	<div class="loadingtext">
 		<el-form :model="infoForm" :rules="rules" ref="infoForm" label-width="150px" class="infoFormbox ">
-        
+
             <el-card class="box-card productinfo_box">
                 <div slot="header" class="clearfix">
                     <span>商品信息</span>
@@ -11,13 +11,13 @@
                     <span class="table_btn" style="margin-left:10px;" @click="changecateFn">选择分类</span>
                      <span class="changhint" v-show="infoForm.categoryName==''&&hint">请先选择商品分类</span>
                 </el-form-item>
-                 <el-form-item label="商品标题" prop="name" style="width:80%;"> 
+                 <el-form-item label="商品标题" prop="name" style="width:80%;">
                     <div class="ttbox">
                          <el-input v-model="infoForm.name" placeholder="" size="medium" >
                          </el-input>
                     </div>
                 </el-form-item>
-                <el-form-item label="简介" prop="intro" style="width:80%;"> 
+                <el-form-item label="简介" prop="intro" style="width:80%;">
                     <div class="ttbox">
                          <el-input v-model="infoForm.intro" placeholder="" size="medium" >
                           </el-input>
@@ -28,17 +28,17 @@
                         <template slot="append"><el-button @click="skuRuleShowFn">修改规则</el-button></template>
                     </el-input>
                     <span :style="productSkuNumberFn>40?'color:red;':''">{{productSkuNumberFn}}</span>/40
-                   
+
                 </el-form-item> -->
-                
-			
+
+
                 <el-form-item label="品牌" prop="brandId">
                      <el-select v-model="infoForm.brandId" placeholder="请选择品牌" size="medium" @change="changeBrand">
                         <el-option v-for="item in brandList" :key="item.id" :label="item.name" :value="item.id"></el-option>
                     </el-select>
                 </el-form-item>
-              
-                
+
+
             </el-card>
             <el-card class="box-card">
                 <div slot="header" class="clearfix">
@@ -46,21 +46,21 @@
                 </div>
                 <specBlock :dataId="infoForm.categoryThreeId" @on-submit="getSpecFn" :infoDetail="infoDetail"></specBlock>
              </el-card>
-             
+
              <div>
                  <img-block @on-imglist="getImgList" :infoImg="infoImg"></img-block>
              </div>
-           
-         
+
+
              <el-card class="box-card">
                  <div slot="header" class="clearfix">
                     <span>描述信息</span>
                 </div>
                  <editor v-model="infoForm.content" :editorData="infoForm.content"></editor>
-              
+
             </el-card>
-         
-            
+
+
         </el-form>
         <div class="table_btnbox">
             <el-button type="primary" @click="submitForm(1)" :loading="loading">提交</el-button>
@@ -72,10 +72,10 @@
         width="890px">
         <!-- <category-list :data-categorypathid="categoryPathId" :data-browsepathname="browsePathName" @on-catedetail="getcatedetailFn" :data-categoryid="infoForm.categoryId" :data-category-name="categoryName" @on-cancel="cancelFn"></category-list> -->
         <categoryList @on-catedetail="getCategory" :dataIds="dataIds" :dataNames="nameList" @on-cancel="onCancel"></categoryList>
-   
+
         </el-dialog>
-       
-        
+
+
 	</div>
 </template>
 <script>
@@ -196,7 +196,7 @@ export default {
                     });
                 })
                 return promise
-                
+
             },
 
          /**
@@ -219,7 +219,7 @@ export default {
                         let ids=[0,that.infoForm.categoryOneId,that.infoForm.categoryTwoId,that.infoForm.categoryThreeId]
                         this.dataIds=ids
                         this.getBrand(ids[3])
-                      
+
                         let list=[]
                         let index=0
                         async function cateFn(){
@@ -275,8 +275,8 @@ export default {
                     that.$serverErrMsg();
                 });
         },
-  
-       
+
+
           /**
          * @description 选择分类 取消
          */
@@ -296,7 +296,7 @@ export default {
         getSpecFn(
             table, variationThemeInput
         ) {
-           
+
             this.tableData = table;
             this.variationThemeInput = variationThemeInput
         },
@@ -332,7 +332,7 @@ export default {
                     })
                     formData.spu.attributeList = JSON.stringify(attributeList)
                     formData.skus = skuList
-                    
+
 
                     API.spuSaveApi(formData)
                         .then(result => {
@@ -383,9 +383,9 @@ export default {
 }</script>
 
 <style>
-    
+
    .input-with-select .el-select .el-input {
     width: 130px;
   }
-   
+
 </style>

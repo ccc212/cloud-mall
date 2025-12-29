@@ -26,14 +26,14 @@
     >
       <el-table-column min-width="30%" type="selection"></el-table-column>
       <el-table-column prop="name" label="规格名称" min-width="80"></el-table-column>
- 
+
       <el-table-column prop="options" label="规格选项" min-width="120"></el-table-column>
-     
+
 
       <el-table-column label="操作" min-width="120">
         <template slot-scope="scope">
           <div>
-           
+
             <!-- <div class="table_btn">
               <el-button
                 size="small"
@@ -49,7 +49,7 @@
         </template>
       </el-table-column>
     </el-table>
-   
+
     <div class="block page">
       <el-pagination
         @size-change="handleSizeChange"
@@ -136,7 +136,7 @@ export default {
           that.$serverErrMsg();
         });
     },
-   
+
     /**
      * @description 编辑
      */
@@ -144,7 +144,7 @@ export default {
       this.data=row
       this.visibleDialog = true;
     },
-  
+
     /**
      * @description 删除
      */
@@ -209,8 +209,8 @@ export default {
       }
       this.visibleDialog=false
     },
-    
-    
+
+
   }
 };
 </script>
