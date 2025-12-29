@@ -4,6 +4,7 @@ package cn.ccc212.mall.controller;
 import cn.ccc212.mall.dto.skuAttribute.SkuAttributeAddDTO;
 import cn.ccc212.mall.dto.skuAttribute.SkuAttributePageDTO;
 import cn.ccc212.mall.goods.api.SkuAttribute;
+import cn.ccc212.mall.goods.api.Spu;
 import cn.ccc212.mall.service.ISkuAttributeService;
 import cn.ccc212.mall.util.RespResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -45,7 +46,7 @@ public class SkuAttributeController {
     }
 
     @DeleteMapping("/{id}")
-    public RespResult<?> deleteSkuAttribute(@PathVariable Integer id) {
+    public RespResult<Page<Spu>> deleteSkuAttribute(@PathVariable Integer id) {
         skuAttributeService.deleteSkuAttribute(id);
         return RespResult.ok();
     }

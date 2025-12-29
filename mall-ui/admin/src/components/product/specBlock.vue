@@ -114,29 +114,48 @@
      },
      watch: {
          "dataId": {
-             handler() {
-                 let specItems= this.infoDetail.spu&& this.infoDetail.spu.specItems&&JSON.parse(this.infoDetail.spu.specItems)||[]
-                 if(this.dataId){
-                      this.getSpecCategory(this.dataId,specItems)
-                 }
-                
-                 this.tableData=this.infoDetail.skuList
-                 this.tableData=this.infoDetail.skuList&&Array.isArray(this.infoDetail.skuList)&&this.infoDetail.skuList.map((item)=>{
-                    let cd = {}
-                    cd.id=item.id
-                    cd.price = item.price
-                    cd.num =item.num
-                    let descartesName=[]
-                    let spec=JSON.parse(item.spec)||{}
-                    for(let i in spec){
-                        descartesName.push(spec[i])
+            handler() {
+                const rawSpecItems = this.infoDetail.spu && (this.infoDetail.spu.specItems || this.infoDetail.spu.attributeList);
+                let specItems = {};
+                if (rawSpecItems) {
+                    try {
+                        specItems = typeof rawSpecItems === "string" ? JSON.parse(rawSpecItems) : rawSpecItems;
+                    } catch (e) {
+                        specItems = {};
                     }
-                    cd.descartesName = descartesName
-                    cd.image = item.image
-                    return cd
-                 })||[]
-             }
-         },
+                }
+                if (this.dataId) {
+                    this.getSpecCategory(this.dataId, specItems);
+                }
+
+                const skuList = this.infoDetail.skuList || this.infoDetail.skus;
+                this.tableData = Array.isArray(skuList)
+                    ? skuList.map((item) => {
+                        const cd = {
+                            id: item.id || "",
+                            price: item.price,
+                            num: item.num,
+                            image: item.image || ""
+                        };
+                        let spec = {};
+                        const rawSkuAttr = item.spec || item.skuAttribute;
+                        if (rawSkuAttr) {
+                            try {
+                                spec = typeof rawSkuAttr === "string" ? JSON.parse(rawSkuAttr) : rawSkuAttr;
+                            } catch (e) {
+                                spec = {};
+                            }
+                        }
+                        if (this.variationThemeInput && this.variationThemeInput.length) {
+                            cd.descartesName = this.variationThemeInput.map((theme) => spec[theme.name] || "");
+                        } else {
+                            cd.descartesName = Object.values(spec);
+                        }
+                        return cd;
+                    })
+                    : [];
+            }
+        },
      },
 
      created: function() {

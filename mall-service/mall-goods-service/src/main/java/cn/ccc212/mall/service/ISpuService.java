@@ -18,4 +18,14 @@ public interface ISpuService extends IService<Spu> {
     void saveProduct(Product product);
 
     Page<Spu> queryPageList(Long currentPage, Long size, Spu spu);
+
+    Product getProduct(Long spuId);
+
+    Boolean audit(Spu spu);
+
+    Boolean logicDelete(Long spuId);
+
+    Boolean pull(Long spuId);
+
+    Boolean put(Long spuId);
 }

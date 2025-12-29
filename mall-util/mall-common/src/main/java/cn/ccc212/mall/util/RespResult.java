@@ -29,30 +29,30 @@ public class RespResult<T> implements Serializable {
         this.message = resultCode.getMessage();
     }
 
-    public static RespResult ok() {
-        return new RespResult(null, RespCode.SUCCESS);
+    public static <T> RespResult<T> ok() {
+        return new RespResult<>(null, RespCode.SUCCESS);
     }
 
-    public static RespResult ok(Object data) {
-        return new RespResult(data, RespCode.SUCCESS);
+    public static <T> RespResult<T> ok(T data) {
+        return new RespResult<>(data, RespCode.SUCCESS);
     }
 
-    public static RespResult error() {
-        return new RespResult(null, RespCode.ERROR);
+    public static <T> RespResult<T> error() {
+        return new RespResult<>(null, RespCode.ERROR);
     }
 
-    public static RespResult error(String message) {
+    public static <T> RespResult<T> error(String message) {
         return secByError(RespCode.ERROR.getCode(), message);
     }
 
-    public static RespResult secByError(Integer code, String message) {
-        RespResult err = new RespResult();
+    public static <T> RespResult<T> secByError(Integer code, String message) {
+        RespResult<T> err = new RespResult<>();
         err.setCode(code);
         err.setMessage(message);
         return err;
     }
 
-    public static RespResult error(RespCode resultCode) {
-        return new RespResult(resultCode);
+    public static <T> RespResult<T> error(RespCode resultCode) {
+        return new RespResult<>(resultCode);
     }
 }
