@@ -7,7 +7,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>mall-file-service</artifactId>
+    <artifactId>mall-canal-service</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -15,10 +15,17 @@
     </properties>
 
     <dependencies>
+        <!--springboot-canal快速构建依赖包-->
         <dependency>
-            <groupId>io.minio</groupId>
-            <artifactId>minio</artifactId>
-            <version>8.2.1</version>
+            <groupId>top.javatool</groupId>
+            <artifactId>canal-spring-boot-starter</artifactId>
+            <version>1.2.1-RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.ccc212</groupId>
+            <artifactId>mall-goods-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>

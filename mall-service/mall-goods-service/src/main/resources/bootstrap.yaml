@@ -39,8 +39,9 @@ logging:
 knife4j:
   enable: true
 
-minio:
-  endpoint: http://<hostname>:<port>
-  access-key: <access-key>
-  secret-key: <secret-key>
-  bucket-name: <bucket-name>
+feign:
+  client:
+    config:
+      default:  # 全局配置
+        connectTimeout: 5000
+        readTimeout: 10000

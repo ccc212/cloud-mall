@@ -74,11 +74,5 @@
             <version>${fastjson.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.minio</groupId>
-            <artifactId>minio</artifactId>
-            <version>8.2.1</version>
-        </dependency>
-
     </dependencies>
 </project>

@@ -1,0 +1,36 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: mall-canal-service
+  profiles:
+    active: local2
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        # nacos 配置中心地址
+        server-addr: localhost:8848
+      discovery:
+        #Nacos的注册地址
+        server-addr: localhost:8848
+#Canal配置
+canal:
+  server: localhost:11111  # canal的服务器ip
+  destination: example  # canal 中配置的实例目录
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"
+  level:
+    root: error
+
+knife4j:
+  enable: true
+
+feign:
+  client:
+    config:
+      default:  # 全局配置
+        connectTimeout: 5000
+        readTimeout: 10000
