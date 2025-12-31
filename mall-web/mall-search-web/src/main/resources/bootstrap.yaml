@@ -1,0 +1,25 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: mall-websearch
+  profiles:
+    active: local2
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: localhost:8848
+      discovery:
+        #Nacos的注册地址
+        server-addr: localhost:8848
+  thymeleaf:
+    cache: false
+    suffix: .html
+    encoding: UTF-8
+    prefix: classpath:/templates/
+
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"
