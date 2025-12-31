@@ -1,8 +1,8 @@
 package cn.ccc212.mall.service.impl;
 
-import cn.ccc212.mall.enums.AuditStatusEnum;
-import cn.ccc212.mall.enums.CommonConstant;
-import cn.ccc212.mall.enums.GoodsStatusEnum;
+import cn.ccc212.mall.goods.enums.AuditStatusEnum;
+import cn.ccc212.mall.goods.enums.CommonConstant;
+import cn.ccc212.mall.goods.enums.GoodsStatusEnum;
 import cn.ccc212.mall.goods.model.*;
 import cn.ccc212.mall.mapper.BrandMapper;
 import cn.ccc212.mall.mapper.CategoryMapper;

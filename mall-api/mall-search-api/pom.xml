@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.ccc212</groupId>
-        <artifactId>mall-service</artifactId>
+        <artifactId>mall-api</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>mall-canal-service</artifactId>
+    <artifactId>mall-search-api</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -15,23 +15,9 @@
     </properties>
 
     <dependencies>
-        <!--springboot-canal快速构建依赖包-->
         <dependency>
-            <groupId>top.javatool</groupId>
-            <artifactId>canal-spring-boot-starter</artifactId>
-            <version>1.2.1-RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.ccc212</groupId>
-            <artifactId>mall-goods-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.ccc212</groupId>
-            <artifactId>mall-search-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
 
         <dependency>

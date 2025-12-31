@@ -13,9 +13,9 @@ public interface SkuFeign {
     @GetMapping("/aditems/type")
     RespResult<?> typeitems(@RequestParam Integer id);
 
-    @DeleteMapping(value = "/deleteAditems/type")
+    @DeleteMapping("/deleteAditems/type")
     RespResult<?> deleteTypeItems(@RequestParam Integer id);
 
-    @PutMapping(value = "/updateAitems/type")
+    @PutMapping("/updateAitems/type")
     RespResult<?> updateTypeItems(@RequestParam Integer id);
 }

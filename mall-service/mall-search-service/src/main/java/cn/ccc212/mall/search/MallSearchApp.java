@@ -1,23 +1,19 @@
-package cn.ccc212.mall.canal;
-
+package cn.ccc212.mall.search;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@EnableFeignClients(basePackages = {"cn.ccc212.mall.goods.feign", "cn.ccc212.mall.search.feign"})
+@EnableElasticsearchRepositories(basePackages = "cn.ccc212.mall.search.mapper")
 @Slf4j
-public class MallCanalApp {
-
+public class MallSearchApp {
     public static void main(String[] args) {
-        SpringApplication.run(MallCanalApp.class, args);
+        SpringApplication.run(MallSearchApp.class, args);
         log.info("\n========================\n" +
                 "\t\t启动成功\n" +
                 "========================");
     }
-
 }
-

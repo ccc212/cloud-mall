@@ -1,4 +1,4 @@
-package cn.ccc212.mall.enums;
+package cn.ccc212.mall.goods.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
