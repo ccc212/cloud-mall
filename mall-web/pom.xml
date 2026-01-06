@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>mall-search-web</module>
+        <module>mall-page-web</module>
     </modules>
 
     <dependencies>

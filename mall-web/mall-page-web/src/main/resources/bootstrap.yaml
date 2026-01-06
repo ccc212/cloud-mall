@@ -1,0 +1,28 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: mall-web-page
+  profiles:
+    active: local2
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: localhost:8848
+      discovery:
+        #Nacos的注册地址
+        server-addr: localhost:8848
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/template/
+  main:
+    allow-bean-definition-overriding: true
+#页面生成存储路径
+page-path: page
+
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@EnableFeignClients(basePackages = {"cn.ccc212.mall.goods.feign", "cn.ccc212.mall.search.feign"})
+@EnableFeignClients(basePackages = {"cn.ccc212.mall.goods.feign", "cn.ccc212.mall.search.feign", "cn.ccc212.mall.page.feign"})
 @Slf4j
 public class MallCanalApplication {
 

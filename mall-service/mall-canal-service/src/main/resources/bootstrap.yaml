@@ -17,6 +17,8 @@ spring:
   elasticsearch:
     rest:
       uris: http://localhost:9200
+  main:
+    allow-bean-definition-overriding: true
 #Canal配置
 canal:
   server: localhost:11111  # canal的服务器ip

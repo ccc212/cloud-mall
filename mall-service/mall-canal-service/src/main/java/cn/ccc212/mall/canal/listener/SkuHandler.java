@@ -2,6 +2,7 @@ package cn.ccc212.mall.canal.listener;
 
 import cn.ccc212.mall.goods.enums.AuditStatusEnum;
 import cn.ccc212.mall.goods.model.Sku;
+import cn.ccc212.mall.page.feign.PageFeign;
 import cn.ccc212.mall.search.feign.SkuSearchFeign;
 import cn.ccc212.mall.search.model.SkuEs;
 import cn.hutool.core.bean.BeanUtil;
@@ -18,6 +19,7 @@ import top.javatool.canal.client.handler.EntryHandler;
 public class SkuHandler implements EntryHandler<Sku> {
 
     private final SkuSearchFeign skuSearchFeign;
+    private final PageFeign pageFeign;
 
     @Override
     public void insert(Sku sku) {
@@ -25,6 +27,7 @@ public class SkuHandler implements EntryHandler<Sku> {
         if (sku.getStatus().intValue() == AuditStatusEnum.AUDIT.getCode()) {
             skuSearchFeign.add(BeanUtil.copyProperties(sku, SkuEs.class));
         }
+        pageFeign.generateHtml(sku.getSpuId());
     }
 
     @Override
@@ -40,6 +43,7 @@ public class SkuHandler implements EntryHandler<Sku> {
         } else {
             skuSearchFeign.add(BeanUtil.copyProperties(after, SkuEs.class));
         }
+        pageFeign.generateHtml(after.getSpuId());
     }
 
     @Override
