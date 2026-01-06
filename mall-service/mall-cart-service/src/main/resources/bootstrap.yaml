@@ -1,0 +1,32 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: mall-cart
+  profiles:
+    active: local2
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 192.168.100.130:8848
+      discovery:
+        #Nacos的注册地址
+        server-addr: 192.168.100.130:8848
+  data:
+    #MongoDB配置
+    mongodb:
+      database: cloud-mall
+      host: localhost
+      port: 27017
+      username: username
+      password: password
+  main:
+    allow-bean-definition-overriding: true
+#日志配置
+logging:
+  pattern:
+    console: "%msg%n"
+
+knife4j:
+  enable: true
