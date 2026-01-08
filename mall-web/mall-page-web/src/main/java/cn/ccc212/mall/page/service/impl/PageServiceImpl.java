@@ -7,6 +7,7 @@ import cn.ccc212.mall.goods.model.Product;
 import cn.ccc212.mall.goods.model.Sku;
 import cn.ccc212.mall.page.service.PageService;
 import cn.ccc212.mall.util.RespResult;
+import cn.hutool.core.collection.CollUtil;
 import com.alibaba.fastjson.JSON;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -57,7 +58,7 @@ public class PageServiceImpl implements PageService {
     public Map<String, Object> dataLoad(String spuId) {
         RespResult<Product> respProduct = spuFeign.getBySpuId(spuId);
         Product product = respProduct.getData();
-        if (product == null) {
+        if (product == null || product.getSpu() == null || CollUtil.isEmpty(product.getSkus())) {
             return null;
         }
         Map<String, Object> dataMap = new HashMap<>();

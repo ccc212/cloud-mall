@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Column;
+
 /**
  * <p>
  * 
@@ -37,6 +39,7 @@ public class AdItems implements Serializable {
     /**
      * 展示的产品
      */
+    @Column(name = "sku_id")
     private String skuId;
 
     /**
