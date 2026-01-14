@@ -44,6 +44,13 @@ public class CartServiceImpl implements CartService {
                 Sort.by("_id"));
     }
 
+    @Override
+    public void delete(List<String> ids) {
+        for (String id : ids) {
+            cartMapper.deleteById(id);
+        }
+    }
+
     public void sku2cart(Sku sku, Cart cart) {
         cart.setImage(sku.getImage());
         cart.set_id(cart.getUserName() + cart.getSkuId());

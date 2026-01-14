@@ -4,10 +4,7 @@ import cn.ccc212.mall.cart.model.Cart;
 import cn.ccc212.mall.cart.service.CartService;
 import cn.ccc212.mall.util.RespResult;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,11 @@ public class CartController {
     @GetMapping(value = "/list")
     public RespResult<List<Cart>> list(){
         return RespResult.ok(cartService.list("ccc212"));
+    }
+
+    @DeleteMapping
+    public RespResult<?> delete(@RequestBody List<String> ids){
+        cartService.delete(ids);
+        return RespResult.ok();
     }
 }

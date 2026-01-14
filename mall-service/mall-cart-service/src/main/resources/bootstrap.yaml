@@ -4,15 +4,15 @@ spring:
   application:
     name: mall-cart
   profiles:
-    active: local2
+    active: local
   cloud:
     nacos:
       config:
         file-extension: yaml
-        server-addr: 192.168.100.130:8848
+        server-addr: localhost:8848
       discovery:
         #Nacos的注册地址
-        server-addr: 192.168.100.130:8848
+        server-addr: localhost:8848
   data:
     #MongoDB配置
     mongodb:

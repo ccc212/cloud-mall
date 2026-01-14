@@ -29,7 +29,6 @@
   </parent>
 
   <properties>
-    <java.version>15</java.version>
     <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
   </properties>
 
@@ -37,6 +36,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <version>1.18.30</version>
       <optional>true</optional>
     </dependency>
 

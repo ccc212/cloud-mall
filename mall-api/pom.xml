@@ -9,6 +9,10 @@
 
     <artifactId>mall-api</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>mall-order-api</module>
+        <module>mall-user-api</module>
+    </modules>
 
     <dependencies>
         <dependency>

@@ -9,4 +9,6 @@ public interface CartService{
     void add(String skuId,String userName,Integer num);
 
     List<Cart> list(String userName);
+
+    void delete(List<String> ids);
 }
