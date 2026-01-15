@@ -6,6 +6,7 @@ target/
 .idea/
 application-local.yaml
 bootstrap-local*
+file.conf
 
 ### IntelliJ IDEA ###
 *.iws
