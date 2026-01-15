@@ -1,4 +1,4 @@
-package cn.ccc212.mall.user.bean;
+package cn.ccc212.mall.user.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

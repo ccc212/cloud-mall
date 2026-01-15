@@ -1,7 +1,7 @@
 package cn.ccc212.mall.user.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import cn.ccc212.mall.user.bean.Address;
+import cn.ccc212.mall.user.model.Address;
 
 import java.util.List;
 

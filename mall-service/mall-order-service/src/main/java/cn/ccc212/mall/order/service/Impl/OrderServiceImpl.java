@@ -13,6 +13,7 @@ import cn.ccc212.mall.order.mapper.OrderSkuMapper;
 import cn.ccc212.mall.order.service.OrderService;
 import cn.ccc212.mall.util.RespResult;
 import io.seata.spring.annotation.GlobalTransactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.keyvalue.core.IterableConverter;
 import org.springframework.stereotype.Service;
@@ -21,16 +22,14 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order>
         implements OrderService {
-    @Autowired
-    private OrderMapper orderMapper;
-    @Autowired
-    private OrderSkuMapper orderSkuMapper;
-    @Autowired
-    private SkuFeign skuFeign;
-    @Autowired
-    private CartFeign cartFeign;
+    
+    private final OrderMapper orderMapper;
+    private final OrderSkuMapper orderSkuMapper;
+    private final SkuFeign skuFeign;
+    private final CartFeign cartFeign;
 
     // 添加订单
     @Override

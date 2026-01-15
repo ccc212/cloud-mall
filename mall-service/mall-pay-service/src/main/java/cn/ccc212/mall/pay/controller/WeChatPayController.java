@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import cn.ccc212.mall.pay.model.PayLog;
 import cn.ccc212.mall.pay.service.PayLogService;
 import cn.ccc212.mall.util.RespResult;
+import lombok.RequiredArgsConstructor;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.Message;
@@ -18,13 +19,11 @@ import java.util.Date;
 
 @RestController
 @RequestMapping(value = "/wx")
-@CrossOrigin
+@RequiredArgsConstructor
 public class WeChatPayController {
 
-    @Autowired
-    private PayLogService payLogService;
-    @Autowired
-    private RocketMQTemplate rocketMQTemplate;
+    private final PayLogService payLogService;
+    private final RocketMQTemplate rocketMQTemplate;
 
     // 记录支付结果
     // 执行事务消息发送

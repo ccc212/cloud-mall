@@ -30,3 +30,6 @@ mybatis-plus:
 logging:
   pattern:
     console: "%msg%n"
+
+knife4j:
+  enable: true
