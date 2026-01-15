@@ -1,6 +1,7 @@
 package cn.ccc212.mall.controller;
 
 
+import cn.ccc212.mall.cart.model.Cart;
 import cn.ccc212.mall.goods.model.Sku;
 import cn.ccc212.mall.service.ISkuService;
 import cn.ccc212.mall.util.RespResult;
@@ -46,4 +47,11 @@ public class SkuController {
         return RespResult.ok(skuService.getById(id));
     }
 
+    /**
+     * 库存递减*/
+    @PostMapping("/reduce")
+    public RespResult reduce(@RequestBody List<Cart> carts){
+        skuService.reduce(carts);
+        return RespResult.ok();
+    }
 }

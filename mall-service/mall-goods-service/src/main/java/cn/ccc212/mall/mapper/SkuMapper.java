@@ -2,6 +2,8 @@ package cn.ccc212.mall.mapper;
 
 import cn.ccc212.mall.goods.model.Sku;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -16,4 +18,8 @@ import java.util.List;
 public interface SkuMapper extends BaseMapper<Sku> {
 
     void saveBatch(List<Sku> skuDOList);
+
+    // 库存递减
+    @Update("UPDATE sku SET num = num - #{num} WHERE id = #{skuId} AND num >= #{num}")
+    int reduce(@Param("skuId") String skuId, @Param("num") Integer num);
 }

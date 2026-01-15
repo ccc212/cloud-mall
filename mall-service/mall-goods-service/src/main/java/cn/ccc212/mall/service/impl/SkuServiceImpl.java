@@ -1,5 +1,6 @@
 package cn.ccc212.mall.service.impl;
 
+import cn.ccc212.mall.cart.model.Cart;
 import cn.ccc212.mall.goods.enums.RedisKeyConstant;
 import cn.ccc212.mall.goods.model.AdItems;
 import cn.ccc212.mall.goods.model.Sku;
@@ -16,6 +17,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.List;
@@ -60,5 +62,18 @@ public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements ISkuS
                 .eq(AdItems::getType, type));
         List<String> skuids = adItemsList.stream().map(AdItems::getSkuId).collect(Collectors.toList());
         return CollUtil.isNotEmpty(skuids) ? skuMapper.selectByIds(skuids) : Collections.emptyList();
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void reduce(List<Cart> carts) {
+        for (Cart cart : carts) {
+            int count = skuMapper.reduce(cart.getSkuId(), cart.getNum());
+
+            System.out.println("count-------->" + count);
+            if (count < 1) {
+                throw new RuntimeException("库存不足");
+            }
+        }
     }
 }

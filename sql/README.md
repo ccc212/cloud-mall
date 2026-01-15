@@ -1,0 +1,1 @@
+undo_log.sql需要在使用seata组件的模块对应的数据库下都执行。目前是shop_goods和shop_order。

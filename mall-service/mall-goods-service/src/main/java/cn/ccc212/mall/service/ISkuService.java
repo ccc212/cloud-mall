@@ -1,5 +1,6 @@
 package cn.ccc212.mall.service;
 
+import cn.ccc212.mall.cart.model.Cart;
 import cn.ccc212.mall.goods.model.Sku;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -20,4 +21,6 @@ public interface ISkuService extends IService<Sku> {
     void deleteAditemsByType(Integer type);
 
     List<Sku> updateAditemsByType(Integer type);
+
+    void reduce(List<Cart> carts);
 }
