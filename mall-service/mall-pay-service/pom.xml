@@ -7,10 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>mall-order-service</artifactId>
+    <artifactId>mall-pay-service</artifactId>
     <packaging>jar</packaging>
 
-    <name>mall-order-service</name>
+    <name>mall-pay-service</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -20,24 +20,8 @@
     <dependencies>
         <dependency>
             <groupId>cn.ccc212</groupId>
-            <artifactId>mall-order-api</artifactId>
+            <artifactId>mall-pay-api</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.ccc212</groupId>
-            <artifactId>mall-goods-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.ccc212</groupId>
-            <artifactId>mall-cart-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-            <version>2.1.0.RELEASE</version>
         </dependency>
         <!--rocketmq-->
         <dependency>

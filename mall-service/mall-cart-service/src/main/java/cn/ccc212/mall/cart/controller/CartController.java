@@ -21,7 +21,7 @@ public class CartController {
         return RespResult.ok();
     }
 
-    @GetMapping(value = "/list")
+    @PostMapping(value = "/list")
     public RespResult<List<Cart>> list(){
         return RespResult.ok(cartService.list("ccc212"));
     }
