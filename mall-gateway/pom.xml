@@ -9,4 +9,21 @@
 
     <artifactId>mall-gateway</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>mall-gateway-service</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.ccc212</groupId>
+            <artifactId>mall-service-dependency</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.ccc212</groupId>
+            <artifactId>mall-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
