@@ -7,9 +7,11 @@ import cn.ccc212.mall.cart.service.CartService;
 import cn.ccc212.mall.goods.feign.SkuFeign;
 import cn.ccc212.mall.goods.model.Sku;
 import cn.ccc212.mall.util.RespResult;
+import com.google.common.collect.Lists;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +22,7 @@ public class CartServiceImpl implements CartService {
 
     private final CartMapper cartMapper;
     private final SkuFeign skuFeign;
+    private final MongoTemplate mongoTemplate;
 
     @Override
     public void add(String skuId, String userName, Integer num) {
@@ -39,16 +42,13 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Cart> list(String userName) {
-        return cartMapper.findAll(Example.of(new Cart().setUserName(userName)),
-                Sort.by("_id"));
+    public List<Cart> list(List<String> ids) {
+        return Lists.newArrayList(cartMapper.findAllById(ids));
     }
 
     @Override
     public void delete(List<String> ids) {
-        for (String id : ids) {
-            cartMapper.deleteById(id);
-        }
+        mongoTemplate.remove(Query.query(Criteria.where("_id").in(ids)), Cart.class);
     }
 
     public void sku2cart(Sku sku, Cart cart) {

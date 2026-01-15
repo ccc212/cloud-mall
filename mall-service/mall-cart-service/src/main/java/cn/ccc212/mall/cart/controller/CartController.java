@@ -22,8 +22,8 @@ public class CartController {
     }
 
     @PostMapping(value = "/list")
-    public RespResult<List<Cart>> list(){
-        return RespResult.ok(cartService.list("ccc212"));
+    public RespResult<List<Cart>> list(@RequestBody List<String> ids){
+        return RespResult.ok(cartService.list(ids));
     }
 
     @DeleteMapping
