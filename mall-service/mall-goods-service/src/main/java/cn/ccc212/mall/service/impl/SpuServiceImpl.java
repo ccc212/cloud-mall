@@ -22,6 +22,7 @@ import org.springframework.util.StringUtils;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -61,7 +62,7 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements ISpuS
 
         Brand brand = brandMapper.selectById(spu.getBrandId());
         Category category = categoryMapper.selectById(spu.getCategoryThreeId());
-        LocalDateTime now = LocalDateTime.now();
+//        LocalDateTime now = LocalDateTime.now();
         List<Sku> skus = product.getSkus();
         if (CollUtil.isNotEmpty(skus)) {
             List<Sku> skuDOList = new ArrayList<>(skus.size());
@@ -80,8 +81,10 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, Spu> implements ISpuS
                         .setBrandId(brand.getId())
                         .setBrandName(brand.getName())
                         .setSpuId(spu.getId())
-                        .setCreateTime(now)
-                        .setUpdateTime(now);
+//                        .setCreateTime(now)
+//                        .setUpdateTime(now);
+                        .setCreateTime(new Date())
+                        .setUpdateTime(new Date());
                 skuDOList.add(sku);
             });
 

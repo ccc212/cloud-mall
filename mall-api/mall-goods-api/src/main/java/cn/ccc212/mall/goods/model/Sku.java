@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -62,13 +64,13 @@ public class Sku implements Serializable {
      * 创建时间
      */
 //    @Column(name = "create_time")
-    private LocalDateTime createTime;
+    private Date createTime;
 
     /**
      * 更新时间
      */
 //    @Column(name = "update_time")
-    private LocalDateTime updateTime;
+    private Date updateTime;
 
     /**
      * SPUID
