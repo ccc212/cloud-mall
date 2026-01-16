@@ -25,6 +25,7 @@ public class PageController {
 
     @GetMapping(value = "/view/{id}")
     public String viewPage(@PathVariable(value = "id") String spuId) {
+        pageService.generateHtml(spuId);
         return "redirect:/page/" + spuId + ".html";
     }
 }

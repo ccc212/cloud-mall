@@ -50,7 +50,7 @@ public class SkuController {
     /**
      * 库存递减*/
     @PostMapping("/reduce")
-    public RespResult reduce(@RequestBody List<Cart> carts){
+    public RespResult<?> reduce(@RequestBody List<Cart> carts){
         skuService.reduce(carts);
         return RespResult.ok();
     }

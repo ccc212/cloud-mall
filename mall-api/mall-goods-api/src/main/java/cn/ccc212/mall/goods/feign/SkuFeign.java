@@ -20,7 +20,7 @@ public interface SkuFeign {
     /**
      * 库存递减*/
     @PostMapping("/reduce")
-    RespResult reduce(@RequestBody List<Cart> carts);
+    RespResult<?> reduce(@RequestBody List<Cart> carts);
 
     @GetMapping("/aditems/type")
     RespResult<?> typeitems(@RequestParam Integer id);
